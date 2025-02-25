@@ -1,1 +1,6 @@
-.idea
+# IDE specific
+.idea/
+
+# builds
+build/
+cmake-build-debug/
