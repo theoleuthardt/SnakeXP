@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void setupGame(const int cellSize, const int cellCount) {
+void SetupGame(const int cellSize, const int cellCount) {
     // initial game configuration
     InitWindow(cellSize * cellCount, cellSize * cellCount, "SnakeXP");
     SetTargetFPS(60);

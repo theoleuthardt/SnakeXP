@@ -15,12 +15,10 @@ public:
     int size;
     Texture2D texture{};
 
-    Food(int cellSize, Color color, int positionX, int positionY);
+    Food(int cellSize, int cellCount, Color color);
     ~Food();
 
-    void draw() const;
-
-    void randomizePosition(int cellCount);
+    void Draw();
 
 private:
     static vector<string> getPngFilesInDirectory(const string& directory) {
