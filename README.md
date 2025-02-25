@@ -24,3 +24,4 @@ No going back! Will you make it to the final level, or bite your own tail? Grab 
  - Library: [Raylib Website](https://www.raylib.com/) [Raylib Github](https://github.com/raysan5/raylib/tree/master)
  - CMakeList Template: [CMakeList by tupini07](https://github.com/tupini07/raylib-cpp-cmake-template/blob/main/CMakeLists.txt)
  - Youtube Tutorial for basic understanding and base structure: [Youtube Tutorial](https://youtu.be/LGqsnM_WEK4?si=v-MHUn0cz2Cp3I6y)
+ - Game Icon: [Snake Game Icon created with game-icons.net](https://game-icons.net/1x1/lorc/temptation.html#download), Author: [Lorc](https://lorcblog.blogspot.com/)
