@@ -12,6 +12,6 @@ void Food::draw() {
 }
 
 void Food::randomizePosition(const int cellCount) {
-    position.x = GetRandomValue(0, cellCount - 1) * size;
-    position.y = GetRandomValue(0, cellCount - 1) * size;
+    position.x = GetRandomValue(0, cellCount - 1);
+    position.y = GetRandomValue(0, cellCount - 1);
 }
