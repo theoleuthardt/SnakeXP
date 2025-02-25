@@ -4,6 +4,7 @@ project(SnakeXP)
 set(CMAKE_CXX_STANDARD 20)
 
 set(BASE_OUTPUT_DIR "${CMAKE_SOURCE_DIR}/build")
+set(ASSETS_PATH "${CMAKE_SOURCE_DIR}/assets")
 
 if(WIN32)
     set(OUTPUT_DIR "${BASE_OUTPUT_DIR}/windows")
