@@ -1,4 +1,4 @@
-# SNAKE XP
+# SNAKE XP 🐍🧙
 
 ### Description
 
