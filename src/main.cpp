@@ -6,7 +6,7 @@ int main() {
     constexpr Color background = {9, 20, 227, 255};
     constexpr Color drawColor = {255, 255, 255, 255};
     constexpr int cellSize = 40;
-    constexpr int cellCount = 30;
+    constexpr int cellCount = 20;
 
     setupGame(cellSize, cellCount);
     gameLoop(background, drawColor, cellSize, cellCount);
