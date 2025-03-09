@@ -1,8 +1,10 @@
-#ifndef MAP_H
-#define MAP_H
+#ifndef TEXTUREGRID_H
+#define TEXTUREGRID_H
 #include "raylib.h"
 #include <vector>
 #include <map>
+
+using namespace std;
 
 enum TextureType {
     SNAKE_UP,
@@ -24,8 +26,6 @@ enum TextureType {
     TEXTURE_COUNT
 };
 
-using namespace std;
-
 class SnakeTextureGrid {
     vector<Texture2D> textures;
     int cellSize;
@@ -39,9 +39,6 @@ public:
     void initTextureMap();
     bool loadTextures(const string& basePath);
     void drawTextureAt(TextureType type, int gridX, int gridY, int offsetX, int offsetY, float scale);
-
-    int getCellSize() const;
-    int getCellCount() const;
 
     static TextureType getSnakePartTexture (Vector2 current, Vector2 prev, Vector2 next,
                                           bool isTail = false, bool isHead = false);

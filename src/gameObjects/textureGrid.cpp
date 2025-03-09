@@ -1,5 +1,4 @@
-#include "map.h"
-#include "map.h"
+#include "textureGrid.h"
 #include <iostream>
 
 using namespace std;
@@ -82,33 +81,33 @@ bool SnakeTextureGrid::loadTextures(const string& basePath) {
     return true;
 }
 
-void SnakeTextureGrid::drawTextureAt(const TextureType type, const int gridX, const int gridY, const int offsetX,
-                                     const int offsetY, const float scale) {
+void SnakeTextureGrid::drawTextureAt(const TextureType type, const int gridX, const int gridY,
+                                     const int offsetX, const int offsetY, const float scale) {
     if (textureMap.contains(type)) {
         const int index = textureMap[type];
 
-        const float scaledWidth = textures[index].width * scale;
-        const float scaledHeight = textures[index].height * scale;
+        const float actualCellSize = cellSize * scale;
+        const float textureScale = actualCellSize / max(textures[index].width, textures[index].height);
 
-        const float posX = gridX * cellSize + (cellSize - scaledWidth) / 2 + offsetX;
-        const float posY = gridY * cellSize + (cellSize - scaledHeight) / 2 + offsetY;
+        const float scaledWidth = textures[index].width * textureScale;
+        const float scaledHeight = textures[index].height * textureScale;
+        SetTextureFilter(textures[index], TEXTURE_FILTER_POINT);
+
+        float posX = gridX * actualCellSize + (actualCellSize - scaledWidth) / 2 + offsetX;
+        float posY = gridY * actualCellSize + (actualCellSize - scaledHeight) / 2 + offsetY;
 
         const Rectangle source = { 0.0f, 0.0f, static_cast<float>(textures[index].width),
                                   static_cast<float>(textures[index].height) };
         const Rectangle dest = { posX, posY, scaledWidth, scaledHeight };
+
         DrawTexturePro(textures[index], source, dest, Vector2{0, 0}, 0.0f, WHITE);
     }
 }
 
-int SnakeTextureGrid::getCellSize() const {
-    return cellSize;
-}
 
-int SnakeTextureGrid::getCellCount() const {
-    return cellCount;
-}
 
-TextureType SnakeTextureGrid::getSnakePartTexture(const Vector2 current, const Vector2 prev, const Vector2 next, const bool isTail, const bool isHead) {
+TextureType SnakeTextureGrid::getSnakePartTexture(const Vector2 current, const Vector2 prev, const Vector2 next,
+                                                  const bool isTail, const bool isHead) {
     if (isHead) {
         if (next.y > current.y) return SNAKE_DOWN;
         if (next.y < current.y) return SNAKE_UP;

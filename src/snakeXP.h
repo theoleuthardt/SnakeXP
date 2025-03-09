@@ -13,9 +13,9 @@ int ScaledSize(int size, int value);
 
 void SetupGame(int cellSize, int cellCount, int borderSize, int scoreHeight);
 
-void DrawMainMenu(Color background, Color drawColor, float scale, float scaleX, float scaleY);
+void DrawMainMenu(float backgroundSpeed, float scale);
 
-void GameLoop(Color background, Color drawColor, int cellSize, int cellCount, int borderSize, int scoreHeight,
-    float scale, float scaleX, float scaleY);
+void GameLoop(int cellSize, int cellCount, int borderSize, int scoreHeight,
+    float scale);
 
 #endif
