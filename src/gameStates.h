@@ -7,4 +7,11 @@ enum GameState {
     EXIT
 };
 
+enum Direction {
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT
+};
+
 #endif

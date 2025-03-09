@@ -1,11 +1,21 @@
 #ifndef SNAKEXP_H
 #define SNAKEXP_H
 #include "raylib.h"
+#include <iostream>
 
-void SetupGame(int cellSize, int cellCount);
+using namespace std;
 
-void DrawMainMenu(Color background, Color drawColor, int cellSize, int cellCount);
+int ScaledX(float scaleX, int x);
 
-void GameLoop(Color background, Color drawColor, int cellSize, int cellCount);
+int ScaledY(float scaleY, int y);
+
+int ScaledSize(int size, int value);
+
+void SetupGame(int cellSize, int cellCount, int borderSize, int scoreHeight);
+
+void DrawMainMenu(Color background, Color drawColor, float scale, float scaleX, float scaleY);
+
+void GameLoop(Color background, Color drawColor, int cellSize, int cellCount, int borderSize, int scoreHeight,
+    float scale, float scaleX, float scaleY);
 
 #endif

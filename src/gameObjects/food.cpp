@@ -1,4 +1,4 @@
-#include "gameObjects.h"
+#include "food.h"
 #include "raylib.h"
 
 using namespace std;
@@ -29,8 +29,8 @@ Food::~Food() {
     UnloadTexture(texture);
 }
 
-void Food::Draw() {
-    const Vector2 positions = {position.x * size, position.y * size};
-    const float scale = static_cast<float>(size) / texture.width;
+void Food::Draw() const {
+    const Vector2 positions = {position.x * static_cast<float>(size), position.y * static_cast<float>(size)};
+    const float scale = static_cast<float>(size) / static_cast<float>(texture.width);
     DrawTextureEx(texture, positions, 0.0f, scale, color);
 }

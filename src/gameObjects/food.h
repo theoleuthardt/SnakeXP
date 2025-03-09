@@ -1,9 +1,12 @@
-#ifndef GAMEOBJECTS_H
-#define GAMEOBJECTS_H
+#ifndef FOOD_H
+#define FOOD_H
 #include <vector>
 #include <string>
 #include <iostream>
 #include <dirent.h>
+#include <gameStates.h>
+#include <map>
+
 #include "raylib.h"
 
 using namespace std;
@@ -14,11 +17,12 @@ public:
     Color color{};
     int size;
     Texture2D texture{};
+    float scale{};
 
     Food(int cellSize, int cellCount, Color color);
     ~Food();
 
-    void Draw();
+    void Draw() const;
 
 private:
     static vector<string> getPngFilesInDirectory(const string& directory) {
